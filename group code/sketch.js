@@ -6,28 +6,32 @@ let moveOffset = 0;
 function setup() {
   createCanvas(1280, 720);
   let colororange1 = color(199,69,18);//orange1
-  let colororange2 = color(195,95,55);//orange2
-  let colororange3 = color(220,159,117);//orange3
+  let colororange2 = color(195, 96, 39);//orange2
+  let colororange3 = color(209,122,53);//orange3
   let colororange4 = color(221,139,45);//orange4
-  let colororange5 = color(181,124,79);//orange5
+  let colororange5 = color(207,104,27);//orange5
+  let coloryellow1 = color(196,161,111);//lightyellow1
+  let coloryellow2 = color(220,174,104);//lightyellow2
+  let coloryellow3 = color(231,149,67);//yellow
   let colorgreen1 = color(106,128,107);//green1
   let colorblue1 = color(17,23,32);//blackblue
   let colorblue2 = color(35,64,67);//blue1
-  let colorblue3 = color(54,83,90);//blue2
-  let colorblue4 = color(97,126,129);//blue3
-  let colorblue5 = color(22,43,62);//blue4
   
   //need more colour here
   //curve = new flat/highCurve(横向位移，color，y，振幅数字越大振幅越大, 周期宽度数字越小周期越长)；
 
   noStroke();
-  curves[0] = new Curve(0.5, colororange1, 0, 50, 0.05);
-
-  //curves[0] = new Curve(0, col1, 0, 30);
-  //curves[1] = new Curve(0.1, col2, 50, 40);
-  //curves[2] = new Curve(-0.1, col1, 60, 30);
-  //curves[3] = new Curve(0.4, col2, 80, 60);
-
+  curves[0] = new Curve(0,coloryellow1,0,0,0);
+  curves[1] = new Curve(0,colororange2,-100,130,0.05);
+  curves[2] = new Curve(0,colorgreen1,30,70,0.08);
+  curves[3] = new Curve(0,colororange1,15,70,0.05);
+  curves[4] = new Curve(0,colororange4,60,70,0.05);
+  curves[5] = new Curve(0,coloryellow2,85,60,0.05);
+  curves[6] = new Curve(0,colororange3,125,130,0.05);
+  curves[7] = new Curve(0,colororange1,150,80,0.07);
+  curves[8] = new Curve(0,colororange5,200,90,0.07);
+  curves[9] = new Curve(0,coloryellow3,230,90,0.07);
+  curves[10] = new Curve(0,colorblue1,250,90,0.07);
   // Add more curves here
 }
 
