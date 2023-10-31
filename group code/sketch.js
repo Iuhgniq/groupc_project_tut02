@@ -23,15 +23,15 @@ function setup() {
   noStroke();
   curves[0] = new Curve(0,coloryellow1,0,0,0);
   curves[1] = new Curve(0,colororange2,-100,130,0.05);
-  curves[2] = new Curve(0,colorgreen1,30,70,0.08);
-  curves[3] = new Curve(0,colororange1,15,70,0.05);
-  curves[4] = new Curve(0,colororange4,60,70,0.05);
-  curves[5] = new Curve(0,coloryellow2,85,60,0.05);
-  curves[6] = new Curve(0,colororange3,125,130,0.05);
-  curves[7] = new Curve(0,colororange1,150,80,0.07);
-  curves[8] = new Curve(0,colororange5,200,90,0.07);
-  curves[9] = new Curve(0,coloryellow3,230,90,0.07);
-  curves[10] = new Curve(0,colorblue1,250,90,0.07);
+  curves[2] = new Curve(0,colorgreen1,0,70,0.08);
+  curves[3] = new Curve(0,colororange1,0,70,0.05);
+  curves[4] = new Curve(0,colororange4,30,70,0.05);
+  curves[5] = new Curve(0,coloryellow2,55,60,0.05);
+  curves[6] = new Curve(0,colororange3,70,130,0.05);
+  curves[7] = new Curve(0,colororange1,80,80,0.07);
+  curves[8] = new Curve(0,colororange5,100,90,0.07);
+  curves[9] = new Curve(0,coloryellow3,110,90,0.07);
+  curves[10] = new Curve(0,colorblue1,120,90,0.07);
   // Add more curves here
 }
 
