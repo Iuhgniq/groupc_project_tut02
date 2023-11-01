@@ -25,6 +25,7 @@ function draw() {
 
   drawPerson1();
   drawPerson2();
+  drawGhost();
 }
 
 // put all background curves together
@@ -184,6 +185,63 @@ function drawPerson2() {
 
   ellipse(137, 197, 6, 6); // left shoe
   ellipse(147, 197, 6, 6); // right shoe
+}
+
+function drawGhost() {
+  // neck
+  fill(199, 170, 113);
+  noStroke();
+  rect(592, 395, 40, 45);
+
+  // head：large ellipse
+  fill(217, 186, 124);
+  noStroke();
+  ellipse(610, 300, 143, 145);
+  // small ellipse on the buttom
+  ellipse(610, 374, 70, 68);
+
+  // left eye
+  fill(219, 204, 175);
+  ellipse(580, 290, 35, 32);
+  // right eye
+  ellipse(640, 290, 35, 32);
+
+  // left eyeball
+  fill(0);
+  ellipse(573, 286, 7, 6);
+  // right eyeball
+  ellipse(633, 288, 7, 6);
+
+  // nose: two dots
+  fill(0);
+  ellipse(606, 316, 4, 3);
+  ellipse(612, 315, 4, 3);
+
+  // mouse
+  stroke(150, 140, 122);
+  strokeWeight(3);
+  fill(240, 220, 185);
+
+  push(); // make rotated ellipse
+  translate(607, 362);
+  rotate(radians(-13)); 
+  ellipse(0, 0, 25, 42);
+  pop();
+
+  // t-shirt
+  fill(87, 76, 56);
+  noStroke();
+  rect(528, 430, 160, 340, 32);
+
+  // left arm
+
+  // right arm
+
+
+  // t-shirt corner
+
+  
+
 }
 
 
