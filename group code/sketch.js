@@ -5,7 +5,25 @@ let moveOffset = 0;
 
 function setup() {
   createCanvas(1280, 720);
-  
+  backgroundCurve();
+}
+
+function draw() {
+  background(220);
+  moveOffset += moveSpeed;
+
+  for (let i = 0; i < curves.length; i++) {
+    curves[i].display();
+  }
+
+  for (let xoff1 = 1200; xoff1 < width * 1.2; xoff1 += 50) {
+    let v = map(xoff1, 1200, width * 1.2, 0, 255);
+    fill(v, colOffset % 255, 200 - v);
+    curve1(xoff1);
+  }
+}
+
+function backgroundCurve() {
   //background color
   let deeporange = color(163,44,12);
   let redorange = color(204,66,11);
@@ -42,22 +60,6 @@ function setup() {
   curves[13] = new Curve(2,midblue,170,80,0.06);
   curves[14] = new Curve(2,blackblue,200,70,0.06);
   // Add more curves here
-}
-
-
-function draw() {
-  background(220);
-  moveOffset += moveSpeed;
-
-  for (let i = 0; i < curves.length; i++) {
-    curves[i].display();
-  }
-
-  for (let xoff1 = 1200; xoff1 < width * 1.2; xoff1 += 50) {
-    let v = map(xoff1, 1200, width * 1.2, 0, 255);
-    fill(v, colOffset % 255, 200 - v);
-    curve1(xoff1);
-  }
 }
 
 //this is the side curve
