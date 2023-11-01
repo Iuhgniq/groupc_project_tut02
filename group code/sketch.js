@@ -5,33 +5,42 @@ let moveOffset = 0;
 
 function setup() {
   createCanvas(1280, 720);
-  let colororange1 = color(199,69,18);//orange1
-  let colororange2 = color(195, 96, 39);//orange2
-  let colororange3 = color(209,122,53);//orange3
-  let colororange4 = color(221,139,45);//orange4
-  let colororange5 = color(207,104,27);//orange5
-  let coloryellow1 = color(196,161,111);//lightyellow1
-  let coloryellow2 = color(220,174,104);//lightyellow2
-  let coloryellow3 = color(231,149,67);//yellow
-  let colorgreen1 = color(106,128,107);//green1
-  let colorblue1 = color(17,23,32);//blackblue
-  let colorblue2 = color(35,64,67);//blue1
   
+  //background color
+  let deeporange = color(163,44,12);
+  let redorange = color(204,66,11);
+  let midorange = color(212,89,20);
+  let yelloworange = color(215,114,22);
+  let backgreen = color(133,130,95);
+  let backyellow = color(215,173,108);
+
+  let blackblue = color(14,26,20);
+  let deepblue = color(31,46,49);
+  let midblue = color(49,83,85);
+  let lightblue = color(97,125,129);
+
   //need more colour here
   //curve = new flat/highCurve(横向位移，color，y，振幅数字越大振幅越大, 周期宽度数字越小周期越长)；
 
   noStroke();
-  curves[0] = new Curve(0,coloryellow1,0,0,0);
-  curves[1] = new Curve(0,colororange2,-100,130,0.05);
-  curves[2] = new Curve(0,colorgreen1,0,70,0.08);
-  curves[3] = new Curve(0,colororange1,0,70,0.05);
-  curves[4] = new Curve(0,colororange4,30,70,0.05);
-  curves[5] = new Curve(0,coloryellow2,55,60,0.05);
-  curves[6] = new Curve(0,colororange3,70,130,0.05);
-  curves[7] = new Curve(0,colororange1,80,80,0.07);
-  curves[8] = new Curve(0,colororange5,100,90,0.07);
-  curves[9] = new Curve(0,coloryellow3,110,90,0.07);
-  curves[10] = new Curve(0,colorblue1,120,90,0.07);
+  //background orange
+  curves[0] = new Curve(0,backyellow,0,0,0);
+  curves[1] = new Curve(0,midorange,-110,130,0.05);
+  curves[2] = new Curve(0,backgreen,15,70,0.08);
+  curves[3] = new Curve(0,redorange,-20,70,0.05);
+  curves[4] = new Curve(0,midorange,15,70,0.05);
+  curves[5] = new Curve(0,backyellow,35,60,0.05);
+  curves[6] = new Curve(4.9,redorange,55,110,0.06);
+  curves[7] = new Curve(4.9,yelloworange,80,110,0.06);
+  curves[8] = new Curve(4.8,deeporange,50,70,0.08);
+  curves[9] = new Curve(4.8,redorange,65,70,0.08);
+  curves[10] = new Curve(4.8,midorange,90,70,0.08);
+  curves[11] = new Curve(4.8,yelloworange,105,70,0.08);
+  
+  //background black blue
+  curves[12] = new Curve(0,deepblue,110,60,0.07);
+  curves[13] = new Curve(2,midblue,170,80,0.06);
+  curves[14] = new Curve(2,blackblue,200,70,0.06);
   // Add more curves here
 }
 
