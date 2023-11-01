@@ -14,7 +14,7 @@ function setup() {
   let backgreen = color(133,130,95);
   let backyellow = color(215,173,108);
 
-  let blackblue = color(14,26,20);
+  let blackblue = color(9,25,35);
   let deepblue = color(31,46,49);
   let midblue = color(49,83,85);
   let lightblue = color(97,125,129);
