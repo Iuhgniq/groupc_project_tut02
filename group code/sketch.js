@@ -23,6 +23,7 @@ function draw() {
   }
 }
 
+// put all background curves together
 function backgroundCurve() {
   //background color
   let deeporange = color(163,44,12);
