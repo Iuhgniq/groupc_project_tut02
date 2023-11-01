@@ -6,6 +6,8 @@ let moveOffset = 0;
 function setup() {
   createCanvas(1280, 720);
   backgroundCurve();
+  drawPerson1();
+  drawPerson2();
 }
 
 function draw() {
@@ -105,3 +107,81 @@ class Curve {
     endShape(CLOSE);
   }
 }
+
+function drawPerson1() {
+  fill(36, 39, 43);
+  noStroke();
+  ellipse(120, 150, 10, 9); // head
+  ellipse(116, 147, 5, 4); // left part of the hate
+  ellipse(124, 147, 7, 4);// right part of the hate
+  ellipse(120, 168, 13, 30);// body
+  
+  // left arm 
+  push(); 
+  translate(117, 168); // Move the origin to the centre of arm ellipse
+  rotate(radians(35)); // Apply the rotation
+  ellipse(0, 0, 13, 22); // Draw the rotated ellipse
+  pop();
+
+  // right arm
+  push();
+  translate(122, 168);
+  rotate(radians(135)); 
+  ellipse(0, 0, 15, 14);
+  pop();
+
+  // left leg
+  push();
+  translate(118, 178);
+  rotate(radians(10)); 
+  ellipse(0, 0, 9, 30);
+  pop(); 
+
+  // right leg
+  push();
+  translate(121, 178);
+  rotate(radians(-10)); 
+  ellipse(0, 0, 9, 30);
+  pop(); 
+}
+
+function drawPerson2() {
+  fill(0);
+  ellipse(142, 151, 9, 8); // head
+  ellipse(142, 148, 16, 4); // hate bottom
+  ellipse(142.5, 147, 7, 8); // hate top
+  ellipse(142.5, 168, 15, 28); // body
+
+  // left leg 1
+  push(); 
+  translate(140, 177); // move the origin to the centre of leg ellipse
+  rotate(radians(5)); // apply the rotation
+  ellipse(0, 0, 7, 30); // draw the rotated ellipse
+  pop();
+
+  // left leg 2
+  push(); 
+  translate(138, 190);
+  rotate(radians(4)); 
+  ellipse(0, 0, 6, 20);
+  pop();
+
+  // right leg 1
+  push(); 
+  translate(145, 177);
+  rotate(radians(-5));
+  ellipse(0, 0, 7, 30); 
+  pop(); 
+
+  // left leg 2
+  push(); 
+  translate(146, 190);
+  rotate(radians(-3));
+  ellipse(0, 0, 6, 20); 
+  pop();   
+
+  ellipse(137, 197, 6, 6); // left shoe
+  ellipse(147, 197, 6, 6); // right shoe
+}
+
+
