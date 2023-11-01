@@ -23,7 +23,7 @@ function draw() {
   }
 }
 
-function backgroundCurve(){
+function backgroundCurve() {
   //background color
   let deeporange = color(163,44,12);
   let redorange = color(204,66,11);
