@@ -6,8 +6,7 @@ let moveOffset = 0;
 function setup() {
   createCanvas(1280, 720);
   backgroundCurve();
-  drawPerson1();
-  drawPerson2();
+
 }
 
 function draw() {
@@ -23,6 +22,9 @@ function draw() {
     fill(v, colOffset % 255, 200 - v);
     curve1(xoff1);
   }
+
+  drawPerson1();
+  drawPerson2();
 }
 
 // put all background curves together
