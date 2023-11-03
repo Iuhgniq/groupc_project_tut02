@@ -23,9 +23,12 @@ function draw() {
     curve1(xoff1);
   }
 
+
+  drawBridge();
   drawPerson1();
   drawPerson2();
   drawGhost();
+  
 }
 
 // put all background curves together
@@ -241,7 +244,24 @@ function drawGhost() {
   // t-shirt corner
 
   
-
 }
+
+function drawBridge(){
+  // draw three black quads as shadows
+  fill(0);
+  quad(147,197,477,720,597,720,154,197); //shadow of railing1
+  quad(157,197,667,720,797,720,162,194); //shadow of railing2
+  quad(167,197,947,720,1077,720,170,191); //shadow of railing3
+
+ // draw three khaki quads as railings
+  fill(120,98,24);
+  quad(154,197,557,720,597,720,158,197); //railing1
+  quad(162,194,777,720,837,720,166,197); //railing2
+  quad(170,191,1037,720,1107,720,180,197); //railing3
+
+  // the desk of the bridge
+  fill(92, 63, 7);
+  quad(78,197,-80,720,477,720,147,197);
+  }
 
 
