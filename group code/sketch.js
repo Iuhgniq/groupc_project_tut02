@@ -6,11 +6,18 @@ let moveOffset = 0;
 function setup() {
   createCanvas(1280, 720);
   backgroundCurve();
-
 }
 
 function draw() {
   background(220);
+
+  updateCurves();
+  drawBridge();
+  drawPerson1();
+  drawPerson2();
+  drawGhost();
+}
+function updateCurves(){
   moveOffset += moveSpeed;
 
   for (let i = 0; i < curves.length; i++) {
@@ -22,13 +29,6 @@ function draw() {
     fill(v, colOffset % 255, 200 - v);
     curve1(xoff1);
   }
-
-
-  drawBridge();
-  drawPerson1();
-  drawPerson2();
-  drawGhost();
-  
 }
 
 // put all background curves together
@@ -40,15 +40,11 @@ function backgroundCurve() {
   let yelloworange = color(215,114,22);
   let backgreen = color(133,130,95);
   let backyellow = color(215,173,108);
-
   let blackblue = color(9,25,35);
   let deepblue = color(31,46,49);
   let midblue = color(49,83,85);
-  let lightblue = color(97,125,129);
 
-  //need more colour here
   //curve = new flat/highCurve(横向位移，color，y，振幅数字越大振幅越大, 周期宽度数字越小周期越长)；
-
   noStroke();
   //background orange
   curves[0] = new Curve(0,backyellow,0,0,0);
@@ -64,12 +60,18 @@ function backgroundCurve() {
   curves[10] = new Curve(4.8,midorange,90,70,0.08);
   curves[11] = new Curve(4.8,yelloworange,105,70,0.08);
   
-  //background black blue
+  //background black blue - wave
   curves[12] = new Curve(0,deepblue,110,60,0.07);
   curves[13] = new Curve(2,midblue,170,80,0.06);
   curves[14] = new Curve(2,blackblue,200,70,0.06);
-  // Add more curves here
-}
+  curves[15] = new Curve(4,midblue,290,60,0.1);
+  curves[16] = new Curve(3.5,blackblue,300,60,0.1);
+  curves[17] = new Curve(2.4,midblue,370,60,0.1);
+  curves[18] = new Curve(2.6,blackblue,380,60,0.1);
+  curves[19] = new Curve(2.5,deepblue,400,60,0.1);
+  curves[20] = new Curve(2,blackblue,420,70,0.1);
+  curves[21] = new Curve(0,midblue,520,60,0.09);
+  curves[22] = new Curve(0.5,blackblue,530,60,0.09);}
 
 //this is the side curve
 function curve1(offset) {
