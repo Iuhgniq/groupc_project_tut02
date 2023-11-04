@@ -6,11 +6,18 @@ let moveOffset = 0;
 function setup() {
   createCanvas(1280, 720);
   backgroundCurve();
-
 }
 
 function draw() {
   background(220);
+
+  updateCurves();
+  drawBridge();
+  drawPerson1();
+  drawPerson2();
+  drawGhost();
+}
+function updateCurves(){
   moveOffset += moveSpeed;
 
   for (let i = 0; i < curves.length; i++) {
@@ -22,10 +29,6 @@ function draw() {
     fill(v, colOffset % 255, 200 - v);
     curve1(xoff1);
   }
-
-  drawPerson1();
-  drawPerson2();
-  drawGhost();
 }
 
 // put all background curves together
@@ -37,15 +40,11 @@ function backgroundCurve() {
   let yelloworange = color(215,114,22);
   let backgreen = color(133,130,95);
   let backyellow = color(215,173,108);
-
   let blackblue = color(9,25,35);
   let deepblue = color(31,46,49);
   let midblue = color(49,83,85);
-  let lightblue = color(97,125,129);
 
-  //need more colour here
   //curve = new flat/highCurve(横向位移，color，y，振幅数字越大振幅越大, 周期宽度数字越小周期越长)；
-
   noStroke();
   //background orange
   curves[0] = new Curve(0,backyellow,0,0,0);
@@ -61,12 +60,18 @@ function backgroundCurve() {
   curves[10] = new Curve(4.8,midorange,90,70,0.08);
   curves[11] = new Curve(4.8,yelloworange,105,70,0.08);
   
-  //background black blue
+  //background black blue - wave
   curves[12] = new Curve(0,deepblue,110,60,0.07);
   curves[13] = new Curve(2,midblue,170,80,0.06);
   curves[14] = new Curve(2,blackblue,200,70,0.06);
-  // Add more curves here
-}
+  curves[15] = new Curve(4,midblue,290,60,0.1);
+  curves[16] = new Curve(3.5,blackblue,300,60,0.1);
+  curves[17] = new Curve(2.4,midblue,370,60,0.1);
+  curves[18] = new Curve(2.6,blackblue,380,60,0.1);
+  curves[19] = new Curve(2.5,deepblue,400,60,0.1);
+  curves[20] = new Curve(2,blackblue,420,70,0.1);
+  curves[21] = new Curve(0,midblue,520,60,0.09);
+  curves[22] = new Curve(0.5,blackblue,530,60,0.09);}
 
 //this is the side curve
 function curve1(offset) {
@@ -112,79 +117,79 @@ class Curve {
 }
 
 function drawPerson1() {
-  fill(36, 39, 43);
+  fill(0);
   noStroke();
   ellipse(120, 150, 10, 9); // head
-  ellipse(116, 147, 5, 4); // left part of the hate
-  ellipse(124, 147, 7, 4);// right part of the hate
-  ellipse(120, 168, 13, 30);// body
+  ellipse(116, 147, 5, 4); // left part of the hat
+  ellipse(124, 147, 7, 4);// right part of the hat
+  ellipse(120, 168, 16, 33);// body
   
   // left arm 
   push(); 
   translate(117, 168); // Move the origin to the centre of arm ellipse
   rotate(radians(35)); // Apply the rotation
-  ellipse(0, 0, 13, 22); // Draw the rotated ellipse
+  ellipse(0, 0, 15, 24); // Draw the rotated ellipse
   pop();
 
   // right arm
   push();
   translate(122, 168);
   rotate(radians(135)); 
-  ellipse(0, 0, 15, 14);
+  ellipse(0, 0, 17, 15);
   pop();
 
   // left leg
   push();
   translate(118, 178);
   rotate(radians(10)); 
-  ellipse(0, 0, 9, 30);
+  ellipse(0, 0, 11, 42);
   pop(); 
 
   // right leg
   push();
   translate(121, 178);
   rotate(radians(-10)); 
-  ellipse(0, 0, 9, 30);
+  ellipse(0, 0, 11, 42);
   pop(); 
 }
 
 function drawPerson2() {
   fill(0);
   ellipse(142, 151, 9, 8); // head
-  ellipse(142, 148, 16, 4); // hate bottom
-  ellipse(142.5, 147, 7, 8); // hate top
+  ellipse(142, 148, 16, 4); // hat bottom
+  ellipse(142.5, 147, 7, 8); // hat top
   ellipse(142.5, 168, 15, 28); // body
 
   // left leg 1
   push(); 
   translate(140, 177); // move the origin to the centre of leg ellipse
   rotate(radians(5)); // apply the rotation
-  ellipse(0, 0, 7, 30); // draw the rotated ellipse
+  ellipse(0, 0, 9, 33); // draw the rotated ellipse
   pop();
 
   // left leg 2
   push(); 
   translate(138, 190);
   rotate(radians(4)); 
-  ellipse(0, 0, 6, 20);
+  ellipse(0, 0, 7, 26);
   pop();
 
   // right leg 1
   push(); 
   translate(145, 177);
   rotate(radians(-5));
-  ellipse(0, 0, 7, 30); 
+  ellipse(0, 0, 9, 33); 
   pop(); 
 
   // left leg 2
   push(); 
   translate(146, 190);
   rotate(radians(-3));
-  ellipse(0, 0, 6, 20); 
+  ellipse(0, 0, 7, 26); 
   pop();   
 
-  ellipse(137, 197, 6, 6); // left shoe
-  ellipse(147, 197, 6, 6); // right shoe
+  ellipse(137, 199, 8, 6); // left shoe
+  ellipse(147, 199, 8, 6); // right shoe
 }
 
 function drawGhost() {
@@ -241,7 +246,44 @@ function drawGhost() {
   // t-shirt corner
 
   
-
 }
 
+function drawBridge(){
+    fill(120,88,24);
+    stroke(0);
+    strokeWeight(3);
 
+    // draw three black quads on the left
+    fill(120,88,24);
+    quad(73,199,0,380,0,480,80,199); //railing 3
+    //railing 2
+    quad(71.5,199.5,0,290,0,310,82.5,198.5);
+    quad(60,197,0,230,0,250,72,197); //railing 1
+    
+  // the desk of the bridge
+  fill(92, 63, 7);
+  noStroke();
+  quad(78,197,-80,720,477,720,147,197);
+    
+  // draw three black quads as shadows on the right
+  fill(0);
+  quad(147,197,477,720,597,720,154,197); //shadow of railing1
+  quad(157,197,667,720,797,720,162,197); //shadow of railing2
+  quad(167,197,947,720,1077,720,170,197); //shadow of railing3
+
+ // draw three khaki quads as railings on the right
+  fill(120,88,24);
+  quad(154,197,557,720,597,720,160,197); //railing1
+  quad(162,197,777,720,837,720,168,197); //railing2
+  quad(170,197,1037,720,1107,720,178,197); //railing3
+  
+  // vertical handrail
+  //one on the left
+  quad(20,232,20,338,30,330,30,226);
+  //four on the right
+  quad(220,222,220,280,230,292,230,228);
+  quad(320,278.5,320,410,340,430,340,295);
+  quad(470,370,470,600,500,620,500,380);
+  quad(760,540,760,720,810,720,810,580);
+
+  }
