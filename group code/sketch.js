@@ -2,10 +2,13 @@ let curves = [];
 let colOffset = 0;
 let moveSpeed = 0;
 let moveOffset = 0;
+let ghostLayer;
 
 function setup() {
   createCanvas(1280, 720);
   backgroundCurve();
+  ghostLayer = createGraphics(width, height); // this ghostLayer object has referenced Chatgpt solution.
+  drawGhostBodyWaves();
 }
 
 function draw() {
@@ -16,6 +19,8 @@ function draw() {
   drawPerson1();
   drawPerson2();
   drawGhost();
+
+  image(ghostLayer, 0, 0);
 }
 function updateCurves(){
   moveOffset += moveSpeed;
@@ -236,17 +241,56 @@ function drawGhost() {
   // t-shirt
   fill(87, 76, 56);
   noStroke();
-  rect(528, 430, 160, 340, 32);
-
-  // left arm
-
-  // right arm
-
-
-  // t-shirt corner
-
+  // rect(528, 430, 160, 340, 32);
   
 }
+
+// draw colour fills between every two curves on ghost body
+function drawGhostBodyWaves() {
+  let colours = [];
+  let numWaves = 12;
+  let spacing = 16;
+
+  for (let i = 0; i < numWaves - 1; i++) {
+    let waveWidth = i * spacing;
+    let nextX = (i + 1) * spacing;
+    let fillColor = color(random(70, 100), 70, 50); 
+    colours.push(fillColor);
+    drawGhostBody(waveWidth, 440, 1030, 500, fillColor, nextX, ghostLayer); 
+  }
+}
+
+// draw curves of ghost body, by adding a new layer for the body
+// This function references the code in chatgpt, especially from line 265 to line 280.
+function drawGhostBody(waveWidth, startY, w, h, fillColor, nextX, ghostLayer) {
+  let amplitude = 8;
+  let frequency = 0.06;
+
+  ghostLayer.noStroke();
+  ghostLayer.fill(fillColor);
+
+  ghostLayer.beginShape();
+  // start point 
+  ghostLayer.vertex(waveWidth, startY); 
+
+  for (let i = 0; i <= h; i += 10) {
+    let yOffset = i;
+    let xOffset = sin(frequency * yOffset) * amplitude;
+    ghostLayer.vertex(waveWidth + w / 2 + xOffset, startY + yOffset);
+  }
+
+  ghostLayer.vertex(waveWidth + w, startY + h); // end point
+  ghostLayer.vertex(nextX + w, startY + h); // connect to next curve
+  for (let i = h; i >= 0; i -= 10) {
+    let yOffset = i;
+    let xOffset = sin(frequency * yOffset) * amplitude;
+    ghostLayer.vertex(nextX + w / 2 + xOffset, startY + yOffset);
+  }
+
+  ghostLayer.endShape(CLOSE);
+}
+
+
 
 function drawBridge(){
     fill(120,88,24);
