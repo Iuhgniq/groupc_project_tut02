@@ -237,11 +237,6 @@ function drawGhost() {
   rotate(radians(-13)); 
   ellipse(0, 0, 25, 42);
   pop();
-
-  // t-shirt
-  fill(87, 76, 56);
-  noStroke();
-  // rect(528, 430, 160, 340, 32);
   
 }
 
