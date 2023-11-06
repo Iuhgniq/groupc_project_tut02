@@ -1,7 +1,5 @@
 let curves = [];
 let colOffset = 0;
-let moveSpeed = 0;
-let moveOffset = 0;
 let ghostLayer;
 
 function setup() {
@@ -40,9 +38,9 @@ function drawCurves(){
   for (let i = 0; i < curves.length; i++) {
     curves[i].display();
   }
-  for (let sidexoff = 1100; sidexoff < width * 1.3; sidexoff += 60) {
+  for (let sidexoff = 1100; sidexoff < width * 1.3; sidexoff += 65) {
     let change = map(sidexoff, 1200, width * 1.2, 15, 50);
-    fill(15, change + 10, change + 20);
+    fill(10, change + 10, change + 20);
     sideCurve(sidexoff);
   }
 }
@@ -111,11 +109,7 @@ class Curve {
     this.xIncrement = xIncrement;
   }
   display() {
-    fill(
-      this.fillColor.levels[0],
-      this.fillColor.levels[1],
-      this.fillColor.levels[2]
-    );
+    fill(this.fillColor.levels[0], this.fillColor.levels[1], this.fillColor.levels[2]);
     let xoff = this.start;
     let currentxIncrement = this.xIncrement;
 
