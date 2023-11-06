@@ -21,7 +21,20 @@ function draw() {
   drawGhost();
 
   image(ghostLayer, 0, 0);
+
+  // draw rains
+  noStroke();
+  fill(255);
+  let x = random(width);
+  let y = random(height);
+  let w = 1;
+  let h = 20;
+
+  for(let i = 0; i < 800; i++) {
+    ellipse(x, y, w, h);
+  }
 }
+
 //draw the background curves and the side curve(set the color of it)
 function drawCurves(){
   for (let i = 0; i < curves.length; i++) {
