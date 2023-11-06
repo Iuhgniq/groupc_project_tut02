@@ -96,11 +96,7 @@ class Curve {
     this.xIncrement = xIncrement;
   }
   display() {
-    fill(
-      this.fillColor.levels[0],
-      this.fillColor.levels[1],
-      this.fillColor.levels[2]
-    );
+    fill(this.fillColor.levels[0], this.fillColor.levels[1], this.fillColor.levels[2]);
     let xoff = this.start;
     let currentxIncrement = this.xIncrement;
 
