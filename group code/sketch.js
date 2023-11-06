@@ -13,7 +13,7 @@ function setup() {
 
 function draw() {
   background(220);
-
+  noStroke();
   updateCurves();
   drawBridge();
   drawPerson1();
@@ -286,43 +286,46 @@ function drawGhostBody(waveWidth, startY, w, h, fillColor, nextX, ghostLayer) {
 }
 
 
-
-function drawBridge(){
-    fill(120,88,24);
+  function drawBridge() {
+    fill(120, 88, 24); 
     stroke(0);
     strokeWeight(3);
 
-    // draw three black quads on the left
-    fill(120,88,24);
-    quad(73,199,0,380,0,480,80,199); //railing 3
-    //railing 2
-    quad(71.5,199.5,0,290,0,310,82.5,198.5);
-    quad(60,197,0,230,0,250,72,197); //railing 1
-    
-  // the desk of the bridge
-  fill(92, 63, 7);
-  noStroke();
-  quad(78,197,-80,720,477,720,147,197);
-    
-  // draw three black quads as shadows on the right
-  fill(0);
-  quad(147,197,477,720,597,720,154,197); //shadow of railing1
-  quad(157,197,667,720,797,720,162,197); //shadow of railing2
-  quad(167,197,947,720,1077,720,170,197); //shadow of railing3
+    // draw three horizontal railings on the left
+    // quad1
+    fill(70, 50, 10); 
+    quad(73, 197, 0, 380, 0, 480, 80, 199);
 
- // draw three khaki quads as railings on the right
-  fill(120,88,24);
-  quad(154,197,557,720,597,720,160,197); //railing1
-  quad(162,197,777,720,837,720,168,197); //railing2
-  quad(170,197,1037,720,1107,720,178,197); //railing3
+    // quad2
+    quad(69.5, 197, 0, 290, 0, 310, 82.5, 198.5);
+
+    // quad3
+    quad(60, 197, 0, 230, 0, 250, 72, 197);
   
-  // vertical handrail
-  //one on the left
-  quad(20,232,20,338,30,330,30,226);
-  //four on the right
-  quad(220,222,220,280,230,292,230,228);
-  quad(320,278.5,320,410,340,430,340,295);
-  quad(470,370,470,600,500,620,500,380);
-  quad(760,540,760,720,810,720,810,580);
+    // the desk of the bridge
+    fill(120, 88, 24);
+    quad(82, 197, -68, 720, 477, 720, 147, 197);
 
-  }
+     // shadows of right railings
+    fill(0); 
+    quad(147, 197, 477, 720, 597, 720, 154, 197);
+    quad(157, 197, 667, 720, 797, 720, 162, 197);
+    quad(167, 197, 947, 720, 1077, 720, 170, 197);
+
+    // horizontal railings on the right
+    fill(120, 88, 24); 
+    quad(154, 197, 557, 720, 597, 720, 160, 197);
+    quad(162, 197, 777, 720, 837, 720, 168, 197);
+    quad(170, 197, 1037, 720, 1107, 720, 178, 197);
+
+    // vertical railing on the left
+    fill(70, 50, 10); 
+    quad(20, 232, 20, 338, 30, 330, 30, 226);
+
+    // vertical railings on the right
+    fill(0); 
+    quad(220, 232, 220, 290, 230, 302, 230, 238);
+    quad(320, 288.5, 320, 420, 340, 440, 340, 305);
+    quad(470, 380, 470, 620, 500, 650, 500, 400);
+    quad(760, 560, 760, 720, 810, 720, 810, 590);
+}
