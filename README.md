@@ -5,7 +5,7 @@ Qinghui Huang(qhua6277), Xuning Zhang(xzha0557), Jianan Han(jhan0187)
 **Group project:**\
 Drawing Monk's Scream Using Code
  
-**Individual contribution to Group Code:**
+**Individual contribution to Group Code:**\
 Qinghui Huang - background curves(orange sky and dark wave)
 Jianan Han - bridge(including perspective and shadow effects)
 Xuning Zhang - mian person with curve-made body and two small people on the back
