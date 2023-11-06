@@ -8,7 +8,7 @@ Drawing Monk's Scream Using Code
 **Individual contribution to Group Code:**\
 Qinghui Huang - background curves(orange sky and dark wave)\
 Jianan Han - bridge(including perspective and shadow effects)\
-Xuning Zhang - main person with curve-made body and two small people on the back
+Xuning Zhang - Ghost man with curve-made body and two small people on the back
 
 
 **reference link:**\
